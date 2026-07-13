@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --scrollbar-track: #f5f7fa;
+  --scrollbar-thumb: #cfd8e3;
+}
+
+.dark {
+  --scrollbar-track: #0d1220;
+  --scrollbar-thumb: #1b2233;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-ink-900 dark:bg-ink-950 dark:text-ink-50 font-body antialiased transition-colors duration-300;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 8px;
+}
+
+::selection {
+  @apply bg-brand-400/30;
+}
+
+/* Glassmorphism card */
+.glass {
+  @apply bg-white/60 dark:bg-ink-900/50 backdrop-blur-xl border border-white/40 dark:border-white/5 shadow-glass dark:shadow-glass-dark;
+}
+
+/* Gradient text */
+.text-gradient {
+  @apply bg-brand-gradient bg-clip-text text-transparent bg-gradient-lg animate-gradient-x;
+}
+
+/* Section container spacing */
+.section {
+  @apply py-24 md:py-32;
+}
+
+/* Subtle grid background */
+.bg-grid {
+  background-image: linear-gradient(to right, rgba(124, 138, 160, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(124, 138, 160, 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Focus visibility for accessibility */
+a:focus-visible,
+button:focus-visible {
+  @apply outline-none ring-2 ring-brand-500 ring-offset-2 ring-offset-white dark:ring-offset-ink-950 rounded-md;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
