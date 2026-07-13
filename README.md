@@ -72,7 +72,7 @@ All copy lives in `src/data/*.ts` — no need to touch components to update your
 
 ## Resume download
 
-Place your PDF at `public/resume.pdf`. The Hero section's **Download Resume** button already points to `/resume.pdf`.
+Place your PDF at `public/resume.pdf`. The Hero section's **Download Resume** button already points to `/Marc_Gerald_Mayao_Resume.pdf`.
 
 ## Deployment
 
